@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
-import { RiArrowLeftLine, RiMailLine, RiPhoneLine, RiMapPinLine, RiSendPlaneLine } from 'react-icons/ri';
+import { RiArrowLeftLine, RiPhoneLine, RiMapPinLine, RiSendPlaneLine } from 'react-icons/ri';
 import { BiLogoFacebookCircle, BiLogoYoutube, BiLogoInstagramAlt, BiLogoTiktok } from 'react-icons/bi';
 
 export default function ContactPage() {
@@ -76,7 +76,7 @@ export default function ContactPage() {
 
                         {/* Contact Details */}
                         <div className="space-y-6">
-                            <div className="flex items-start gap-4">
+                            {/* <div className="flex items-start gap-4">
                                 <div className="bg-[#2f0f09] p-3 rounded-full">
                                     <RiMailLine className="text-2xl text-[#F2E1CA]" />
                                 </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                                         contact@orphee-nyny.com
                                     </a>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="flex items-start gap-4">
                                 <div className="bg-[#2f0f09] p-3 rounded-full">
@@ -105,7 +105,7 @@ export default function ContactPage() {
                                         href="tel:+241"
                                         className="text-[#2f0f09]/70 hover:text-[#2f0f09] transition-colors"
                                     >
-                                        +241 XX XX XX XX
+                                        +241 77 128-627
                                     </a>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                                         Localisation
                                     </h3>
                                     <p className="text-[#2f0f09]/70">
-                                        Bitam, Gabon
+                                        Libreville, Gabon
                                     </p>
                                 </div>
                             </div>

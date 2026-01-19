@@ -48,16 +48,16 @@ export default function Footer() {
                             Contact
                         </h3>
                         <ul className="space-y-3 font-[family-name:var(--font-poppins)] text-sm">
-                            <li className="flex items-center gap-2 text-[#F2E1CA]/80">
+                            {/* <li className="flex items-center gap-2 text-[#F2E1CA]/80">
                                 <RiMailLine className="text-lg" />
                                 <a href="mailto:contact@orphee-nyny.com" className="hover:text-[#F2E1CA] transition-colors">
                                     contact@orphee-nyny.com
                                 </a>
-                            </li>
+                            </li> */}
                             <li className="flex items-center gap-2 text-[#F2E1CA]/80">
                                 <RiPhoneLine className="text-lg" />
-                                <a href="tel:+241" className="hover:text-[#F2E1CA] transition-colors">
-                                    +241 XX XX XX XX
+                                <a href="tel:+24177128627" className="hover:text-[#F2E1CA] transition-colors">
+                                    +241 77 128-627
                                 </a>
                             </li>
                         </ul>
