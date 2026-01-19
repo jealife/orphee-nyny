@@ -37,6 +37,8 @@ export default function BiographiePage() {
                                     src="/images/ORPHÉE-NYNY_Plage_38.webp"
                                     alt="Orphée NYNY"
                                     fill
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
+                                    priority
                                     className="object-cover"
                                 />
                             </div>

@@ -42,6 +42,8 @@ export default function Home() {
             fill
             className="object-cover object-center"
             priority
+            sizes="100vw"
+            quality={90}
           />
           {/* Artistic Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-[#1a0a06] backdrop-blur-[2px]"></div>
@@ -199,6 +201,7 @@ export default function Home() {
                     src={`/images/ORPHÉE-NYNY_Plage_${index === 0 ? '20' : index === 1 ? '22' : '3'}.webp`}
                     alt={song.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
