@@ -24,7 +24,7 @@ export default function Navbar() {
     { href: "/videos", label: "Clips & Médias" },
     // { href: "/evenements", label: "Événements" },
     { href: "/galerie", label: "Galerie" },
-    { href: "/services", label: "Services" },
+    // { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
   ];
 

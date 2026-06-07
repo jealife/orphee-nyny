@@ -16,18 +16,7 @@ export default function Home() {
   ];
 
   const upcomingEvents = [
-    {
-      id: 1,
-      title: "Concert Live - Libreville",
-      date: "15 Mars 2026",
-      location: "Palais des Sports"
-    },
-    {
-      id: 2,
-      title: "Festival de Musique Gabonaise",
-      date: "22 Avril 2026",
-      location: "Stade Omnisports"
-    }
+    
   ];
 
   return (
@@ -248,28 +237,42 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {upcomingEvents.map((event) => (
-              <div key={event.id} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#F2E1CA] p-3 rounded-full">
-                    <RiCalendarLine className="text-2xl text-[#2f0f09]" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-[family-name:var(--font-baskervville)] text-white mb-2">
-                      {event.title}
-                    </h3>
-                    <p className="text-[#F2E1CA] font-[family-name:var(--font-poppins)] mb-1">
-                      {event.date}
-                    </p>
-                    <p className="text-white/80 font-[family-name:var(--font-poppins)]">
-                      {event.location}
-                    </p>
+          {upcomingEvents.length > 0 ? (
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              {upcomingEvents.map((event) => (
+                <div key={event.id} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-[#F2E1CA] p-3 rounded-full">
+                      <RiCalendarLine className="text-2xl text-[#2f0f09]" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-[family-name:var(--font-baskervville)] text-white mb-2">
+                        {event.title}
+                      </h3>
+                      <p className="text-[#F2E1CA] font-[family-name:var(--font-poppins)] mb-1">
+                        {event.date}
+                      </p>
+                      <p className="text-white/80 font-[family-name:var(--font-poppins)]">
+                        {event.location}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-4 mb-12 py-10">
+              <div className="bg-[#F2E1CA]/10 border border-[#F2E1CA]/20 rounded-2xl px-10 py-8 text-center max-w-lg">
+                <RiCalendarLine className="text-5xl text-[#F2E1CA]/50 mx-auto mb-4" />
+                <p className="text-xl text-white/80 font-[family-name:var(--font-poppins)] mb-2">
+                  Aucun concert prévu pour le moment.
+                </p>
+                <p className="text-white/50 font-[family-name:var(--font-poppins)] text-sm">
+                  Suivez-moi sur les réseaux sociaux pour ne rien manquer.
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
 
           <div className="text-center">
             <Link
@@ -295,14 +298,8 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/services"
-              className="bg-[#2f0f09] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#4a1810] transition-all hover:scale-105"
-            >
-              Découvrir mes services
-            </Link>
-            <Link
               href="/contact"
-              className="border-2 border-[#2f0f09] text-[#2f0f09] px-8 py-4 rounded-full font-semibold hover:bg-[#2f0f09] hover:text-white transition-all hover:scale-105"
+              className="bg-[#2f0f09] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#4a1810] transition-all hover:scale-105"
             >
               Me contacter
             </Link>
