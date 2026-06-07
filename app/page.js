@@ -139,6 +139,7 @@ export default function Home() {
             <div className="w-full lg:w-2/3 shadow-2xl rounded-2xl overflow-hidden border-4 border-white/20">
               <div className="aspect-video w-full">
                 <iframe
+                  key={videoSrc}
                   className="w-full h-full"
                   src={videoSrc}
                   title="YouTube video player"
@@ -152,18 +153,29 @@ export default function Home() {
             <div className="w-full lg:w-1/3 space-y-6">
               <h3 className="text-3xl text-[#2f0f09] border-b-2 border-[#2f0f09]/10 pb-4">En écoute</h3>
               <ul className="space-y-4">
-                {songs.map((song, index) => (
-                  <li
-                    key={index}
-                    onClick={() => setVideoSrc(song.url)}
-                    className="group flex items-center p-4 bg-white/40 hover:bg-white/80 rounded-xl cursor-pointer transition-all duration-300 border border-transparent hover:border-[#2f0f09]/10"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-[#2f0f09] text-[#F2E1CA] flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
-                      <RiPlayLargeFill className="text-lg" />
-                    </div>
-                    <span className="text-[#2f0f09] font-medium font-[family-name:var(--font-poppins)] group-hover:translate-x-1 transition-transform">{song.title}</span>
-                  </li>
-                ))}
+                {songs.map((song, index) => {
+                  const isActive = videoSrc === song.url;
+                  return (
+                    <li
+                      key={index}
+                      onClick={() => setVideoSrc(song.url)}
+                      className={`group flex items-center p-4 rounded-xl cursor-pointer transition-all duration-300 border ${
+                        isActive
+                          ? 'bg-[#2f0f09] border-[#2f0f09]'
+                          : 'bg-white/40 hover:bg-white/80 border-transparent hover:border-[#2f0f09]/10'
+                      }`}
+                    >
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-transform group-hover:scale-110 ${
+                        isActive ? 'bg-[#F2E1CA] text-[#2f0f09]' : 'bg-[#2f0f09] text-[#F2E1CA]'
+                      }`}>
+                        <RiPlayLargeFill className="text-lg" />
+                      </div>
+                      <span className={`font-medium font-[family-name:var(--font-poppins)] group-hover:translate-x-1 transition-transform ${
+                        isActive ? 'text-[#F2E1CA]' : 'text-[#2f0f09]'
+                      }`}>{song.title}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
