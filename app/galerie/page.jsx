@@ -4,6 +4,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RiArrowLeftLine, RiCloseLine } from 'react-icons/ri';
 
+function getEvent(src) {
+    if (src.includes('Plage')) return 'plage';
+    if (src.includes('EKEAM')) return 'ekeam';
+    return 'jealife-concert';
+}
+
+function interleaveByEvent(photos) {
+    const groups = {};
+    for (const photo of photos) {
+        const event = getEvent(photo.src);
+        if (!groups[event]) groups[event] = [];
+        groups[event].push(photo);
+    }
+    const queues = Object.values(groups);
+    const result = [];
+    let hasMore = true;
+    while (hasMore) {
+        hasMore = false;
+        for (const queue of queues) {
+            if (queue.length > 0) {
+                result.push(queue.shift());
+                hasMore = true;
+            }
+        }
+    }
+    return result;
+}
+
 export default function GaleriePage() {
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -29,14 +57,29 @@ export default function GaleriePage() {
         { id: 12, src: '/images/ORPHÉE-NYNY_Plage_38.webp', alt: 'Orphée NYNY - Beauté', category: 'Portraits' },
         { id: 13, src: '/images/concert/JEaLiFe· Pictures-238.jpg', alt: 'Orphée NYNY - Scène', category: 'Concerts' },
         { id: 20, src: '/images/concert/JEaLiFe· Pictures-148.jpg', alt: 'Orphée NYNY - Scène', category: 'Concerts' },
+        { id: 22, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600002.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 23, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600003.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 24, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600004.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 25, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600006.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 26, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600007.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 27, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600008.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 28, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600009.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 29, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600010.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 30, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600012.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 31, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600015.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 32, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600017.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 33, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600019.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
+        { id: 34, src: '/images/concert/EKEAM-LIVE-IF-12-avril-202600022.jpg', alt: 'Orphée NYNY - EKEKAM LIVE', category: 'Concerts' },
     ];
 
     const categories = ['Tous', 'Portraits', 'Concerts'];
     const [activeCategory, setActiveCategory] = useState('Tous');
 
-    const filteredPhotos = activeCategory === 'Tous'
-        ? photos
-        : photos.filter(photo => photo.category === activeCategory);
+    const filteredPhotos = interleaveByEvent(
+        activeCategory === 'Tous'
+            ? photos
+            : photos.filter(photo => photo.category === activeCategory)
+    );
 
     return (
         <div className="min-h-screen bg-[#F2E1CA]">
