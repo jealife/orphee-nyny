@@ -1,46 +1,24 @@
 'use client'
 import Link from 'next/link';
+import Image from 'next/image';
 import { RiArrowLeftLine, RiCalendarLine, RiMapPinLine, RiTimeLine, RiTicketLine } from 'react-icons/ri';
 
 export default function EvenementsPage() {
     const upcomingEvents = [
-        {
-            id: 1,
-            title: "Concert Live - Libreville",
-            date: "15 Mars 2026",
-            time: "20h00",
-            location: "Palais des Sports, Libreville",
-            description: "Une soirée exceptionnelle avec mes plus grands succès et des surprises exclusives.",
-            status: "upcoming",
-            ticketLink: "#"
-        },
-        {
-            id: 2,
-            title: "Festival de Musique Gabonaise",
-            date: "22 Avril 2026",
-            time: "18h00",
-            location: "Stade Omnisports, Port-Gentil",
-            description: "Participation au plus grand festival de musique du Gabon avec d'autres artistes renommés.",
-            status: "upcoming",
-            ticketLink: "#"
-        }
+
     ];
 
     const pastEvents = [
         {
             id: 3,
-            title: "Concert Privé - Bitam",
-            date: "10 Décembre 2025",
-            location: "Centre Culturel de Bitam",
-            description: "Un retour aux sources avec un concert intimiste dans ma ville natale."
+            title: "EKEAM LIVE",
+            date: "02 Avril 2026",
+            location: "Institut Français du Gabon, Libreville",
+            description: "Un retour aux sources avec un concert live à Institut Français du Gabon.",
+            image: "/images/concert/EKEAM-LIVE-IF-12-avril-202600010.jpg",
+
         },
-        {
-            id: 4,
-            title: "Showcase Acoustique",
-            date: "5 Novembre 2025",
-            location: "Café des Arts, Libreville",
-            description: "Une performance acoustique exclusive avec mes titres revisités."
-        }
+
     ];
 
     return (
@@ -78,9 +56,19 @@ export default function EvenementsPage() {
                             {upcomingEvents.map((event) => (
                                 <div
                                     key={event.id}
-                                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+                                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow flex flex-col lg:flex-row"
                                 >
-                                    <div className="p-8 lg:flex lg:items-center lg:justify-between">
+                                    {event.image && (
+                                        <div className="relative h-64 lg:h-auto lg:w-1/3 w-full shrink-0">
+                                            <Image
+                                                src={event.image}
+                                                alt={event.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="p-8 lg:flex lg:items-center lg:justify-between flex-1">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-4">
                                                 <span className="bg-[#2f0f09] text-white px-4 py-1 rounded-full text-sm font-semibold">
@@ -144,32 +132,44 @@ export default function EvenementsPage() {
                         {pastEvents.map((event) => (
                             <div
                                 key={event.id}
-                                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+                                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
                             >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <span className="bg-[#2f0f09]/20 text-[#2f0f09] px-4 py-1 rounded-full text-sm font-semibold">
-                                        Terminé
-                                    </span>
-                                </div>
-
-                                <h3 className="text-2xl font-[family-name:var(--font-baskervville)] text-[#2f0f09] mb-3">
-                                    {event.title}
-                                </h3>
-
-                                <div className="space-y-2 mb-3">
-                                    <div className="flex items-center gap-2 text-[#2f0f09]/70 text-sm">
-                                        <RiCalendarLine className="text-lg" />
-                                        <span className="font-[family-name:var(--font-poppins)]">{event.date}</span>
+                                {event.image && (
+                                    <div className="relative h-48 w-full shrink-0">
+                                        <Image
+                                            src={event.image}
+                                            alt={event.title}
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
-                                    <div className="flex items-center gap-2 text-[#2f0f09]/70 text-sm">
-                                        <RiMapPinLine className="text-lg" />
-                                        <span className="font-[family-name:var(--font-poppins)]">{event.location}</span>
+                                )}
+                                <div className="p-6 flex-1 flex flex-col">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="bg-[#2f0f09]/20 text-[#2f0f09] px-4 py-1 rounded-full text-sm font-semibold">
+                                            Terminé
+                                        </span>
                                     </div>
-                                </div>
 
-                                <p className="text-[#2f0f09]/70 font-[family-name:var(--font-poppins)] text-sm leading-relaxed">
-                                    {event.description}
-                                </p>
+                                    <h3 className="text-2xl font-[family-name:var(--font-baskervville)] text-[#2f0f09] mb-3">
+                                        {event.title}
+                                    </h3>
+
+                                    <div className="space-y-2 mb-3">
+                                        <div className="flex items-center gap-2 text-[#2f0f09]/70 text-sm">
+                                            <RiCalendarLine className="text-lg" />
+                                            <span className="font-[family-name:var(--font-poppins)]">{event.date}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-[#2f0f09]/70 text-sm">
+                                            <RiMapPinLine className="text-lg" />
+                                            <span className="font-[family-name:var(--font-poppins)]">{event.location}</span>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-[#2f0f09]/70 font-[family-name:var(--font-poppins)] text-sm leading-relaxed mt-auto">
+                                        {event.description}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>

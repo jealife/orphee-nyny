@@ -27,20 +27,7 @@ export default function ServicesPage() {
                 "Musique pour films/publicités",
                 "Jingles et génériques"
             ]
-        },
-        {
-            id: 3,
-            icon: <RiVoiceprintLine className="text-5xl" />,
-            title: "Enregistrement Studio",
-            description: "Services d'enregistrement professionnel en studio avec une qualité sonore exceptionnelle.",
-            features: [
-                "Enregistrement vocal",
-                "Production musicale",
-                "Mixage et mastering",
-                "Direction artistique"
-            ]
-        },
-        {
+        },{
             id: 4,
             icon: <RiUserVoiceLine className="text-5xl" />,
             title: "Featuring & Collaborations",
@@ -52,30 +39,6 @@ export default function ServicesPage() {
                 "Projets artistiques communs"
             ]
         },
-        {
-            id: 5,
-            icon: <RiCalendarEventLine className="text-5xl" />,
-            title: "Animation d'Événements",
-            description: "Animation musicale pour tous types d'événements : mariages, galas, soirées d'entreprise, et plus encore.",
-            features: [
-                "Mariages",
-                "Événements d'entreprise",
-                "Galas et cérémonies",
-                "Soirées privées"
-            ]
-        },
-        {
-            id: 6,
-            icon: <RiStarLine className="text-5xl" />,
-            title: "Coaching Vocal",
-            description: "Accompagnement personnalisé pour développer votre talent vocal et votre présence scénique.",
-            features: [
-                "Cours de chant individuels",
-                "Technique vocale",
-                "Préparation scénique",
-                "Développement artistique"
-            ]
-        }
     ];
 
     return (
