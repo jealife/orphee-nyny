@@ -150,7 +150,7 @@ export default function Home() {
             </div>
 
             {/* Playlist */}
-            <div className="w-full lg:w-1/3 space-y-6">
+            <div className="w-full lg:w-1/3 space-y-6" id="playlist">
               <h3 className="text-3xl text-[#2f0f09] border-b-2 border-[#2f0f09]/10 pb-4">En écoute</h3>
               <ul className="space-y-4">
                 {songs.map((song, index) => {
@@ -213,7 +213,7 @@ export default function Home() {
                   <button
                     onClick={() => {
                       setVideoSrc(song.url);
-                      document.querySelector('#bio').scrollIntoView({ behavior: 'smooth' });
+                      document.querySelector('#playlist').scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="flex items-center gap-2 text-[#2f0f09] font-semibold hover:gap-3 transition-all"
                   >
