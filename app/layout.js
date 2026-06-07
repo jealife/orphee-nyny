@@ -65,11 +65,43 @@ export const viewport = {
   themeColor: "#FF2600",
 };
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Orphée NYNY',
+  alternateName: 'Orphee NYNY',
+  url: 'https://www.orphee-nyny.com',
+};
+
+const musicArtistSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicGroup',
+  name: 'Orphée NYNY',
+  url: 'https://www.orphee-nyny.com',
+  image: 'https://www.orphee-nyny.com/Orphée-nyny-opengraph@2x.jpg',
+  description: 'Orphée NYNY est une chanteuse, compositrice et interprète originaire de Bitam, au nord du Gabon.',
+  genre: ['Afro-pop', 'Musique gabonaise', 'Musique africaine'],
+  sameAs: [
+    'https://www.instagram.com/orphee_nyny',
+    'https://www.youtube.com/@orpheenyny',
+    'https://www.tiktok.com/@orphee_nyny',
+    'https://www.facebook.com/orpheenyny',
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
         <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(musicArtistSchema) }}
+        />
       </head>
       <body
         className={`${poppins.variable} ${baskervville.variable} antialiased`}
