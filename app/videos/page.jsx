@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { RiArrowLeftLine, RiPlayLargeFill } from 'react-icons/ri';
 
@@ -92,10 +93,12 @@ export default function VideosPage() {
                             >
                                 {/* Thumbnail */}
                                 <div className="relative aspect-video overflow-hidden bg-gray-200">
-                                    <img
+                                    <Image
                                         src={video.thumbnail}
-                                        alt={video.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        alt={`${video.title} — clip officiel Orphée NYNY`}
+                                        fill
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
                                         <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full group-hover:bg-white/30 transition-colors">

@@ -38,7 +38,7 @@ export default function Home() {
         < div className="absolute inset-0 z-0" >
           <Image
             src="/images/ORPHÉE-NYNY_Plage_22.webp"
-            alt="Orphée NYNY Background"
+            alt="Orphée NYNY — Chanteuse et compositrice gabonaise originaire de Bitam"
             fill
             className="object-cover object-center"
             priority
@@ -96,7 +96,7 @@ export default function Home() {
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/ORPHÉE-NYNY_Plage_3.webp"
-                alt="Orphée NYNY Portrait"
+                alt="Orphée NYNY — Portrait artistique de la chanteuse gabonaise"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />

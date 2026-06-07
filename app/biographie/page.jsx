@@ -35,7 +35,7 @@ export default function BiographiePage() {
                             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                                 <Image
                                     src="/images/ORPHÉE-NYNY_Plage_38.webp"
-                                    alt="Orphée NYNY"
+                                    alt="Orphée NYNY — Portrait officiel de la chanteuse et compositrice gabonaise"
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     priority
