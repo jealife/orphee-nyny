@@ -16,23 +16,27 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Orphée Nyny",
-  description: "Orphée NYNY est une chanteuse, compositrice, et interprète originaire de la ville de Bitam, dans le nord du Gabon.",
+  title: {
+    default: "Orphée NYNY — Chanteuse & Compositrice Gabonaise",
+    template: "%s | Orphée NYNY",
+  },
+  description: "Orphée NYNY est une chanteuse, compositrice et interprète originaire de Bitam, au nord du Gabon. Découvrez sa musique, ses concerts et son univers artistique.",
   keywords: "Orphée NYNY, chanteuse gabonaise, musique gabonaise, artiste gabonaise, compositrice africaine, interprète gabonaise, afro-pop Gabon, chanteuse Bitam, musique urbaine Gabon, culture musicale gabonaise, talent gabonais, musique africaine, chanteuse francophone, scène musicale gabonaise, chansons Orphée NYNY",
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Orphée Nyny",
-    description: "Orphée NYNY est une chanteuse, compositrice, et interprète originaire de la ville de Bitam, dans le nord du Gabon. Propulsez votre présence en ligne avec notre expertise.",
+    title: "Orphée NYNY — Chanteuse & Compositrice Gabonaise",
+    description: "Orphée NYNY est une chanteuse, compositrice et interprète originaire de Bitam, au nord du Gabon. Découvrez sa musique, ses concerts et son univers artistique.",
     url: "https://www.orphee-nyny.com/",
-    siteName: "Orphée Nyny",
+    siteName: "Orphée NYNY",
     images: [
       {
         url: "/Orphée-nyny-opengraph@2x.jpg",
         width: 1200,
         height: 630,
+        alt: "Orphée NYNY — Chanteuse & Compositrice Gabonaise",
       },
     ],
     locale: "fr_FR",
@@ -40,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orphée Nyny",
-    description: "Orphée NYNY est une chanteuse, compositrice, et interprète originaire de la ville de Bitam, dans le nord du Gabon. Propulsez votre présence en ligne avec notre expertise.",
+    title: "Orphée NYNY — Chanteuse & Compositrice Gabonaise",
+    description: "Orphée NYNY est une chanteuse, compositrice et interprète originaire de Bitam, au nord du Gabon. Découvrez sa musique, ses concerts et son univers artistique.",
     creator: "@orphee_nyny",
     images: ["/Orphée-nyny-opengraph@2x.jpg"],
   },
@@ -64,11 +68,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <head>
+        <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css" />
+      </head>
       <body
         className={`${poppins.variable} ${baskervville.variable} antialiased`}
       >
         <ScrollToTop />
-        <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css"></link>
         <header className="flex items-center justify-center top-0 w-full">
           <Navbar />
         </header>
