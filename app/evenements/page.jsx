@@ -11,11 +11,11 @@ export default function EvenementsPage() {
     const pastEvents = [
         {
             id: 3,
-            title: "EKEAM LIVE",
+            title: "EKENA LIVE",
             date: "02 Avril 2026",
             location: "Institut Français du Gabon, Libreville",
             description: "Un retour aux sources avec un concert live à Institut Français du Gabon.",
-            image: "/images/concert/EKEAM-LIVE-IF-12-avril-202600010.jpg",
+            image: "/images/concert/EKENA-LIVE-IF-12-avril-202600010.jpg",
 
         },
 

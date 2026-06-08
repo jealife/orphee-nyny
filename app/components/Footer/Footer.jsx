@@ -109,6 +109,17 @@ export default function Footer() {
                 <div className="border-t border-[#F2E1CA]/20 pt-6 mt-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#F2E1CA]/60 font-[family-name:var(--font-poppins)]">
                         <p>© {currentYear} Orphée NYNY. Tous droits réservés.</p>
+                        <p>
+                            Site conçu par{' '}
+                            <a
+                                href="https://www.jealife.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-[#F2E1CA] transition-colors underline underline-offset-2"
+                            >
+                                JEaLiFe Agency
+                            </a>
+                        </p>
                         <div className="flex gap-4">
                             <Link href="/mentions-legales" className="hover:text-[#F2E1CA] transition-colors">
                                 Mentions légales
